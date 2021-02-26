@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"> 
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,600|Saira+Extra+Condensed:600" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo-ico.ico"/>
+    <title>Theater im Parkett</title>
+</head>
+
+<body>
+    
+    <header>
+       
+        <div class="logo"></div>
+        
+        <div class="teaser">
+            <div class="animation">
+                <img class="slideBG5" src="img/slides/slide5.png" alt="">
+                <img class="slideBG4" src="img/slides/slide4.png" alt="">
+                <img class="slideBG3" src="img/slides/slide3.png" alt="">
+                <img class="slideBG2" src="img/slides/slide2.png" alt="">
+                <img class="slideBG1" src="img/slides/slide1.png" alt="">
+                <div class="slide1">
+                    <p class="knockout slide1a">Willkommen</p>
+                    <p class="knockout slide1b">im Parkett!</p>
+                </div>
+                <div class="slide2">
+                    <p>Fiebern Sie mit uns!</p>
+                </div>
+                <div class="slide4">
+                    <p class="knockout slide4a">Treffpunkt Parkett<br>Für gross und klein</p>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <a href="index.html">Start</a>
+            <a href="festival.html">Festival</a>
+            <a href="">Spielplan</a>
+            <a href="">Tickets</a>
+            <a href="">Über das Theater</a>
+            <a href="">Anfahrt</a>
+        </nav>
+        
+        <div class="menu-mobile">
+            <img src="img/Logo-small.png" alt="">
+            <img src="img/menu.png" alt="" id="menu">
+        </div>
+        
+    </header>
+    
+    
+    
+    <main>
+
+        <section class="highlight">
+            <article>
+                <h1>Highlight: In diesem Jahr sind wir beim traditionellen Stuttgarter Festival <a href="festival.html">Theaterfieber</a> dabei.</h1>
+                <p>Wir freuen uns sehr, Sie am Samstag, 13. Oktober 2018 von 19 bis 24 Uhr in unseren heiligen Hallen in der Hohen Straße begrüßen zu dürfen. Freuen Sie sich auf sechs angespielte Stücke, die Sie hoffentlich animieren, wieder zu kommen und die eine oder andere Aufführung von Anfang bis Ende anzusehen.</p>
+            </article>
+        </section>
+
+        <section class="section-start premiere">
+            <div class="img-container-start"></div>
+            <article>
+                <h2>Aktuelle Premiere</h2>
+                <p>Am Freitag, den 12. Oktober präsentieren wir die Premiere von „Kaltgestellt“.<br>Bestellen Sie Ihr Karten schon heute.
+                </p>
+            </article>
+            <button>Tickets und Termine hier</button>
+        </section>
+
+        <section class="section-start theaterfreunde">
+            <div class="img-container-start"></div>
+            <article>
+                <h2>Liebe <br>Theaterfreunde</h2>
+                <p>seit mehr als 50 Jahren bieten wir auf unserer Amateurbühne ein Programm für Groß und Klein. Wir spielen Klassiker – von Shakespeares „Lustigen Weibern von Windsor“ bis zu Dürrenmatts „Besuch der alten Dame“. Wir setzen uns aber auch mit Gegenwartsstücken ganz junger Autoren auseinander. Und wir bieten immer mehrere Stücke für Kinder an – besonders in der Vorweihnachtszeit.
+                </p>
+            </article>
+            <button>Schauen Sie sich einfach auf unserem Spielplan um!</button>
+        </section>
+        
+        <footer>
+            <a href="">Impressum</a>
+            <div class="logo"></div>
+        </footer>
+
+    </main>
+    
+</body>
+
+
+
+<script>
+    
+    $(document).ready(function(){
+
+        $(window).resize(function(){  
+            $(".menu-mobile").removeClass("z5");
+            if ($(window).width() <= 1182) {
+                $("nav").hide();
+            } else {
+                $("nav").css("display", "flex");
+            }
+        });
+        if ($(window).width() <= 1182) {
+            $("nav").hide();
+        } else {
+            $("nav").css("display", "flex");
+        }
+        
+        $("#menu").click(function(){
+            $("nav").slideToggle(100);
+            $(".menu-mobile").toggleClass("z5");
+        });
+        
+        
+        
+        $(window).resize(function(){
+            
+            var scalefactor = $(window).width() / 1000
+            
+            if ($(window).width() <= 1000) {
+                $(".animation").css("transform", "scale(" + scalefactor + ")");
+            } else {
+                $(".animation").css("transform", "scale(1)");
+            }
+            
+        });
+        
+        var scalefactor = $(window).width() / 1000
+            
+        if ($(window).width() <= 1000) {
+            $(".animation").css("transform", "scale(" + scalefactor + ")");
+        } else {
+            $(".animation").css("transform", "scale(1)");
+        }
+    });
+    
+</script>
